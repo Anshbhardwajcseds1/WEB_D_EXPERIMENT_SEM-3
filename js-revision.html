@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        h2 {
+            margin-top: 24px;
+            color: #2c3e50;
+        }
+        button {
+            padding: 8px 14px;
+            margin: 8px 0;
+            border: none;
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        p {
+            margin: 8px 0 16px;
+            padding: 8px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>First js program</h2>
+    <button onclick="runcode()">run code</button>
+    <p id="result"></p>
+
+
+    <script>                
+        function runcode(){
+            let n1=10;
+            let n2=5;
+
+            let sum=n1+n2;
+
+            document.getElementById("result").innerText="sum is : "+sum;
+        }
+    </script>
+
+    <h2> datatype</h2>
+    <button onclick="runcode2()"> run</button>
+    <p id="result2"></p>
+    <script>
+        function runcode2(){
+            let age=20;
+            let name="Ankit Singh";
+            let isStudent=true;
+            document.getElementById("result2").innerText = 
+            "age type : "+typeof age+ " | "+ 
+            "name type : "+ typeof name +" | "+
+            "isStudent type : "+typeof isStudent;
+
+        }
+    </script>
+
+    <h2> if else</h2>
+    <button onclick="runcode3()"> run</button>
+    <p id="result3"></p>
+    <script>
+        function runcode3(){
+            let marks=90;
+            if(marks>=50){
+                document.getElementById("result3").innerText="You have passed.";
+            }
+            else if(marks>=35 && marks<50){
+                document.getElementById("result3").innerText="You have got grace marks.";
+            }
+            else{
+                document.getElementById("result3").innerText="You have failed.";
+            }
+        }
+    </script>
+
+    <h2> Function calling by value example</h2>
+    <button onclick="runcode4()"> run</button>
+    <p id="result4"></p>
+    <script>
+        function runcode4(){
+            let num1=10;
+            let num2=20;
+
+            function add(a,b){
+                return a+b;
+            }
+
+            let sum=add(num1,num2);
+            document.getElementById("result4").innerText="sum is : "+sum;
+        }
+    </script>
+    <h2>Array example</h2>
+    <button onclick="runcode5()"> run</button>
+    <p id="result5"></p>
+    <script>
+        function runcode5(){
+            let fruits=["apple","banana","orange"];
+            document.getElementById("result5").innerText="First fruit is : "+fruits[0]+" | Length: "+fruits.length;
+            fruits.push("grapes");
+            document.getElementById("result5").innerText+=" | New fruit added: "+fruits[fruits.length-1];
+        }
+    </script>
+
+    <h2>object</h2>
+    <button onclick="runcode6()"> run</button>
+    <p id="result6"></p>
+    <script>
+        function runcode6(){
+            let student={
+                name:"Ankit yadav",
+                age:20,
+                marks:100
+            };
+            document.getElementById("result6").innerText="Student name: "+student.name+" | Age: "+student.age+" | Marks: "+student.marks;
+        }
+    </script>
+<h2></h2>
+    <button onclick="runcode7()"> run</button>
+    <p id="result7"></p>
+    <script>
+        function runcode7(){
+            const container = document.getElementById('result7');
+            container.innerHTML = '';
+
+            // create buttons for different events
+            const btnClick = document.createElement('button');
+            btnClick.textContent = 'Click me (shows SMS)';
+            btnClick.style.marginRight = '8px';
+
+            const btnDbl = document.createElement('button');
+            btnDbl.textContent = 'Double-click me';
+            btnDbl.style.marginRight = '8px';
+
+            const span = document.createElement('span');
+            span.style.display = 'inline-block';
+            span.style.marginLeft = '12px';
+
+            // click event: show a short message
+            btnClick.addEventListener('click', function(){
+                span.innerText = 'SMS: Button clicked! (aapne click kiya)';
+            });
+
+            // double click event: different message
+            btnDbl.addEventListener('dblclick', function(){
+                span.innerText = 'SMS: Button double-clicked! (double click)';
+            });
+
+            // append to result7
+            container.appendChild(btnClick);
+            container.appendChild(btnDbl);
+            container.appendChild(span);
+        }
+    </script>
+</body>
+</html>
